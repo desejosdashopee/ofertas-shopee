@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Melhores Ofertas do Dia Shopee">
 <title>Melhores Ofertas do Dia - Shopee</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18200472396"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18200472396');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -155,7 +163,7 @@ function renderCards(filtro){
     const catSlug=cat.toLowerCase().replace(/ /g,"-");
     const img=p.imagem_url||"https://via.placeholder.com/400x400/1E1E1E/888?text=Produto";
     const link=p.url_afiliado_temp||"#";
-    return "<div class=\"card\" style=\"animation-delay:"+(i%8*50)+"ms\" data-cat=\""+catSlug+"\"><div class=\"card-img-wrap\"><img src=\""+img+"\" alt=\""+nome.replace(/\"/g,"")+"\" loading=\"lazy\" onerror=\"this.src='https://via.placeholder.com/400x400/1E1E1E/555?text=Shopee'\"><div class=\"card-tag\">"+cat+"</div><div class=\"card-verified\">✓</div></div><div class=\"card-body\"><div class=\"card-stars\"><span class=\"stars\">"+rnd(ratings)+"</span><span class=\"stars-count\">("+rnd(reviews)+" avaliações)</span></div><div class=\"card-nome\">"+nome+"</div><div class=\"card-preco-wrap\"><div class=\"card-preco\">"+preco+"</div><div class=\"card-shopee-badge\">🛒 Shopee</div></div><a href=\""+link+"\" class=\"btn-comprar\" target=\"_blank\" rel=\"noopener noreferrer\">Ver oferta →</a></div></div>";
+    return "<div class=\"card\" style=\"animation-delay:"+(i%8*50)+"ms\" data-cat=\""+catSlug+"\"><div class=\"card-img-wrap\"><img src=\""+img+"\" alt=\""+nome.replace(/\"/g,"")+"\" loading=\"lazy\" onerror=\"this.src='https://via.placeholder.com/400x400/1E1E1E/555?text=Shopee'\"><div class=\"card-tag\">"+cat+"</div><div class=\"card-verified\">✓</div></div><div class=\"card-body\"><div class=\"card-stars\"><span class=\"stars\">"+rnd(ratings)+"</span><span class=\"stars-count\">("+rnd(reviews)+" avaliações)</span></div><div class=\"card-nome\">"+nome+"</div><div class=\"card-preco-wrap\"><div class=\"card-preco\">"+preco+"</div><div class=\"card-shopee-badge\">🛒 Shopee</div></div><a href=\""+link+"\" class=\"btn-comprar\" target=\"_blank\" rel=\"noopener noreferrer\" onclick=\"gtag('event','click',{'event_category':'oferta','event_label':'"+nome.replace(/\"/g,"")+"'})\" >Ver oferta →</a></div></div>";
   }).join("");
 }
 function filtrar(cat,btn){
